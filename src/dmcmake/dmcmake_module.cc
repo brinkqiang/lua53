@@ -19,10 +19,28 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#ifndef __LUA53_CONFIG_H_INCLUDE__
-#define __LUA53_CONFIG_H_INCLUDE__
+#include "dmcmake_module.h"
+#include "sol.hpp"
 
-#define LUA53_VERSION "${LUA53_VERSION}"
-#cmakedefine USE_LUA53
+namespace lua_module_dmcmake
+{
+    static sol::table require_api(sol::this_state L)
+    {
+        sol::state_view lua(L);
+        sol::table module = lua.create_table();
 
-#endif // __LUA53_CONFIG_H_INCLUDE__
+        return module;
+    }    
+}
+
+LUAMOD_API int luaopen_dmcmake(lua_State* L)
+{
+    return sol::stack::call_lua(L, 1, lua_module_dmcmake::require_api);
+}
+
+LUAMOD_API int require_dmcmake(lua_State* L)
+{
+    luaL_requiref(L, "dmcmake", luaopen_dmcmake, 0);
+    printf("lua module: require dmcmake\n");
+    return 1;
+}

@@ -19,17 +19,23 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#include "lua53.h"
+#ifndef DMCMAKE_ERRORCODE_H_INCLUDE_VERSION_1_0
+#define DMCMAKE_ERRORCODE_H_INCLUDE_VERSION_1_0
 
-class Clua53_module :
-    public Ilua53
-{
-public:
-    Clua53_module();
-    
-    virtual ~Clua53_module();
+#ifdef __cplusplus
+extern "C" {
+#endif
 
-    virtual void DMAPI Release(void);
-	
-    virtual void DMAPI Test(void);	
-};
+#include "lua.h"
+#include "lualib.h"
+#include "lauxlib.h"
+
+LUAMOD_API int luaopen_dmcmake(lua_State* L);
+
+LUAMOD_API int require_dmcmake(lua_State* L);
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif

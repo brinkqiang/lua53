@@ -77,7 +77,7 @@ script:
   - popd
 
 after_success:
-  - "if [ -f bin/lua53test ] ; then bin/lua53test ; fi"
+  - "if [ -f bin/DMCMaketest ] ; then bin/DMCMaketest ; fi"
 
 after_failure:
   - echo failure
@@ -90,7 +90,7 @@ deploy:
   provider: releases
   api_key:
     secure: $GITHUB_ACCESS_TOKEN
-  file: bin/lua53test
+  file: bin/DMCMaketest
   skip_cleanup: true
   on:
     branch: master

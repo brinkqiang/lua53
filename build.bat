@@ -1,7 +1,7 @@
 
 rem - clone code
-rem git clone https://github.com/brinkqiang/lua53.git
-rem pushd lua53
+rem git clone https://github.com/brinkqiang/DMCMake.git
+rem pushd DMCMake
 rem git submodule update --init --recursive
 
 rmdir /S /Q build

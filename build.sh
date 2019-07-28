@@ -6,8 +6,8 @@
 #
 
 # - clone code
-# git clone https://github.com/brinkqiang/lua53.git
-# pushd lua53
+# git clone https://github.com/brinkqiang/DMCMake.git
+# pushd DMCMake
 # git submodule update --init --recursive
 #
 
@@ -26,5 +26,4 @@ cmake --build . --config relwithdebinfo
 popd
 
 # popd
-
 # echo continue && read -n 1
