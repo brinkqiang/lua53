@@ -1,5 +1,5 @@
 
-#include "dmcmake_module.h"
+#include "lua53_module.h"
 
 int main( int argc, char* argv[] ) {
 
@@ -8,5 +8,5 @@ int main( int argc, char* argv[] ) {
     {
         return -1;
     }
-    return require_dmcmake(state);
+    return require_lua53(state);
 }

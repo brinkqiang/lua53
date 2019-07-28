@@ -19,8 +19,8 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#ifndef DMCMAKE_ERRORCODE_H_INCLUDE_VERSION_1_0
-#define DMCMAKE_ERRORCODE_H_INCLUDE_VERSION_1_0
+#ifndef LUA53_ERRORCODE_H_INCLUDE_VERSION_1_0
+#define LUA53_ERRORCODE_H_INCLUDE_VERSION_1_0
 
 #ifdef __cplusplus
 extern "C" {
@@ -30,9 +30,9 @@ extern "C" {
 #include "lualib.h"
 #include "lauxlib.h"
 
-LUAMOD_API int luaopen_dmcmake(lua_State* L);
+LUAMOD_API int luaopen_lua53(lua_State* L);
 
-LUAMOD_API int require_dmcmake(lua_State* L);
+LUAMOD_API int require_lua53(lua_State* L);
 
 #ifdef __cplusplus
 }

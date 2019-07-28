@@ -19,10 +19,10 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#include "dmcmake_module.h"
+#include "lua53_module.h"
 #include "sol.hpp"
 
-namespace lua_module_dmcmake
+namespace lua_module_lua53
 {
     static sol::table require_api(sol::this_state L)
     {
@@ -33,14 +33,14 @@ namespace lua_module_dmcmake
     }    
 }
 
-LUAMOD_API int luaopen_dmcmake(lua_State* L)
+LUAMOD_API int luaopen_lua53(lua_State* L)
 {
-    return sol::stack::call_lua(L, 1, lua_module_dmcmake::require_api);
+    return sol::stack::call_lua(L, 1, lua_module_lua53::require_api);
 }
 
-LUAMOD_API int require_dmcmake(lua_State* L)
+LUAMOD_API int require_lua53(lua_State* L)
 {
-    luaL_requiref(L, "dmcmake", luaopen_dmcmake, 0);
-    printf("lua module: require dmcmake\n");
+    luaL_requiref(L, "lua53", luaopen_lua53, 0);
+    printf("lua module: require lua53\n");
     return 1;
 }

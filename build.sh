@@ -6,8 +6,8 @@
 #
 
 # - clone code
-# git clone https://github.com/brinkqiang/DMCMake.git
-# pushd DMCMake
+# git clone https://github.com/brinkqiang/lua53.git
+# pushd lua53
 # git submodule update --init --recursive
 #
 
