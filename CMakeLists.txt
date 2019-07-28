@@ -92,5 +92,5 @@ INSTALL(DIRECTORY include/
 INSTALL(TARGETS lua lua53
        RUNTIME DESTINATION bin
        LIBRARY DESTINATION lib
-       ARCHIVE DESTINATION lib)
+       ARCHIVE DESTINATION bin)
 # xargs rm < install_manifest.txt
