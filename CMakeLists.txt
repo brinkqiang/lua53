@@ -1,0 +1,39 @@
+cmake_minimum_required(VERSION 3.2)
+
+PROJECT(lua53)
+
+LIST(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
+INCLUDE(cmake/ModuleImport.cmake)
+INCLUDE(cmake/ModuleCompileOptions.cmake)
+ModuleSetCompileOptions()
+
+SET(LUA53_VERSION_MAJOR "1")
+SET(LUA53_VERSION_MINOR "0")
+SET(LUA53_VERSION_PATCH "1")
+SET(LUA53_VERSION "${LUA53_VERSION_MAJOR}.${LUA53_VERSION_MINOR}.${LUA53_VERSION_PATCH}")
+
+MESSAGE(STATUS "VERSION: ${LUA53_VERSION}")
+
+OPTION(USE_LUA53 "use lua53" OFF)
+CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/include/lua53_config.h.in ${CMAKE_CURRENT_SOURCE_DIR}/include/lua53_config.h)
+
+ModuleImport("dmlog" "thirdparty/dmlog")
+LibImport("lua53" "src")
+ExeImport("test" "lua53;dmlog")
+
+#ADD_CUSTOM_COMMAND(
+#TARGET lua53test
+#PRE_BUILD
+#COMMAND ${CMAKE_COMMAND} -E copy_if_different
+#${CMAKE_CURRENT_SOURCE_DIR}/config/test.csv
+#$<TARGET_FILE_DIR:lua53test>
+#)
+
+#INSTALL(DIRECTORY include/ DESTINATION include)
+#INSTALL(TARGETS lua53
+#        RUNTIME DESTINATION bin
+#        LIBRARY DESTINATION lib
+#        ARCHIVE DESTINATION lib)
+
+#SET(LUA53_LIBS "lua53")
+#MARK_AS_ADVANCED(${LUA53_LIBS})
