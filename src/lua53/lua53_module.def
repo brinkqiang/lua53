@@ -1,3 +1,0 @@
-EXPORTS 
-    luaopen_lua53
-    require_lua53
