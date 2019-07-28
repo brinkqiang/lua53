@@ -93,3 +93,4 @@ INSTALL(TARGETS lua lua53
        RUNTIME DESTINATION bin
        LIBRARY DESTINATION bin
        ARCHIVE DESTINATION bin)
+# xargs rm < install_manifest.txt
