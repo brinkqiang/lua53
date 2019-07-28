@@ -92,5 +92,7 @@ INSTALL(DIRECTORY include/
     FILES_MATCHING PATTERN "*.h")
 
 INSTALL(TARGETS lua lua53
-    RUNTIME DESTINATION bin)
+    RUNTIME DESTINATION bin
+    LIBRARY DESTINATION lib
+    ARCHIVE DESTINATION lib)
 # xargs rm < install_manifest.txt
