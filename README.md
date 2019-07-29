@@ -24,6 +24,16 @@ Copyright (c) 2013-2018 brinkqiang (brink.qiang@gmail.com)
 ## env
 install cmake
 
+win
+```
+build.bat
+```
+
+linux
+```
+sh build.sh
+```
+
 ## Intro
 lua53
 ```cpp
