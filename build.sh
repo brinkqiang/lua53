@@ -22,7 +22,7 @@ pushd build
 
 cmake -DCMAKE_BUILD_TYPE=relwithdebinfo ..
 cmake --build . --config relwithdebinfo
-sudo make install
+# sudo make install
 popd
 
 # popd
