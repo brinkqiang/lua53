@@ -4,7 +4,9 @@ PROJECT(lua53)
 INCLUDE(cmake/ModuleImport.cmake)
 LIST(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 INCLUDE(cmake/ModuleCompileOptions.cmake)
+
 ModuleSetCompileOptions()
+ModuleUninstall()
 
 SET(LUA53_VERSION_MAJOR "5")
 SET(LUA53_VERSION_MINOR "3")
@@ -92,13 +94,5 @@ ELSE(WIN32)
     LIBRARY DESTINATION /${CMAKE_INSTALL_LIBDIR}
     ARCHIVE DESTINATION /${CMAKE_INSTALL_LIBDIR})
 ENDIF(WIN32)
-
-CONFIGURE_FILE(
-  "${CMAKE_CURRENT_SOURCE_DIR}/cmake/cmake_uninstall.cmake.in"
-  "${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake"
-  IMMEDIATE @ONLY)
-
-ADD_CUSTOM_TARGET(uninstall
-  "${CMAKE_COMMAND}" -P "${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake")
 
 # xargs rm < install_manifest.txt
