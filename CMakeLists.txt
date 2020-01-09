@@ -6,7 +6,6 @@ LIST(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 INCLUDE(cmake/ModuleCompileOptions.cmake)
 
 ModuleSetCompileOptions()
-ModuleUninstall()
 
 SET(LUA53_VERSION_MAJOR "5")
 SET(LUA53_VERSION_MINOR "1")
