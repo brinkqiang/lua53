@@ -1,10 +1,10 @@
 cmake_minimum_required(VERSION 3.2)
 
 PROJECT(lua53)
-INCLUDE(cmake/ModuleImport.cmake)
-LIST(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
-INCLUDE(cmake/ModuleCompileOptions.cmake)
 
+LIST(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
+INCLUDE(cmake/ModuleImport.cmake)
+INCLUDE(cmake/ModuleCompileOptions.cmake)
 ModuleSetCompileOptions()
 
 SET(LUA53_VERSION_MAJOR "5")
